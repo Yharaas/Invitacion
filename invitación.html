@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Baby Shower</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Kaushan+Script?classification=Display,Handwriting">
+    <style>
+        body {
+            font-family: 'Dancing Script', Arial, sans-serif;
+            text-align: center;
+            background-color: #fff7e7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: beige;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: #6e8447;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            color: white;
+            font-size: 36px; /* Tamaño del texto */
+            font-family: 'Kaushan Script', sans-serif; /* Tipografía */
+        }
+        .header h1 {
+            margin: 0;
+            color: white;
+            font-size: 36px; /* Tamaño del texto */
+            font-family: 'Kaushan Script', sans-serif; /* Tipografía */
+        }
+        .content {
+            padding: 20px;
+        }
+        .dinosaur-img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content h2 {
+            font-size: 50px; /* Tamaño del texto */
+            font-family: 'Dancing Script', sans-serif; /* Tipografía */
+        }
+        .content p {
+            font-size: 18px; /* Tamaño del texto */
+            font-family: 'Montserrat', sans-serif; /* Tipografía */
+        }
+        .countdown {
+            font-size: 20px;
+            margin: 20px 0;
+            font-family: 'Montserrat', sans-serif; /* Tipografía */
+        }
+        .button {
+            background-color: #6e8447;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 18px; /* Tamaño del texto */
+            font-family: 'Montserrat', sans-serif; /* Tipografía */
+        }
+        .button:hover {
+            background-color: #a1d4ef;
+        }
+        .footer {
+            font-size: 20px; /* Tamaño del texto */
+            color: #888;
+            margin-top: 20px;
+            font-family: 'Montserrat', sans-serif; /* Tipografía */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Estás Invitado a mi</h1>
+            <h1>¡Baby Shower!</h1>
+        </div>
+        <div class="content">
+            <img src="Dinosauriobebe.png" alt="Dinosaurio Bebé" class="dinosaur-img">
+            <h2> Oliver Anthony</h2>
+            <p>Únete a nosotros para celebrar la llegada de nuestro pequeño</p>
+            <div id="countdown" class="countdown"></div>
+            <a href="https://maps.app.goo.gl/rtEfCyKKuDK8vsGAA" class="button">Ver Ubicación</a>
+            <a href="mailto:ssarahy1002@gmail.com?subject=Confirmar%20Asistencia" class="button">Confirmar Asistencia</a>
+        </div>
+        <div class="footer">
+            <p>Fecha del evento: 23 de Junio, 2024</p>
+            <p>Hora del evento: 11:30am</p>
+            <p>Obsequio en sobre cerrado</p)
+        </div>
+    </div>
+
+    <script>
+        // Cuenta regresiva
+        const eventDate = new Date("Jun 23, 2024 12:00:00").getTime();
+
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "¡El evento ha comenzado!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+
